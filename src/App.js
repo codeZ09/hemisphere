@@ -1,27 +1,23 @@
 import { useState } from "react";
 
-
 function App() {
-  const [location, setlocation] = useState({ latitude: 25, longitude: null });
-  {
-    navigator.geolocation.getCurrentPosition((position) =>
+  const [location, setlocation] = useState({ latitude: null, errorM: " " });
+
+  navigator.geolocation.getCurrentPosition(
+    (position) =>
       setlocation({
         latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      })
-    );
-    return (
-      <>
-        <div>{location.latitude}</div>
-        <div>{location.longitude}</div>
-      </>
-    );
-   return(
-    <div>{location.latitude}</div>
-   )
-    
+      }),
+    (error) => setlocation({ errorM: error.message })
+  );
+
+  if (location.latitude && !location.errorM) {
+    return <div>{location.latitude}</div>;
+  } else if (!location.latitude && location.errorM) {
+    return <div>{location.errorM}</div>;
+  } else {
+    return <div>Loading.....</div>;
   }
-  
 }
 
 export default App;
