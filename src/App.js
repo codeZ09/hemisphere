@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import HemisDisplay from "./hemisDisplay";
 
 function App() {
  
@@ -17,7 +18,7 @@ useEffect(() => {
       
 
   if (location.latitude && !location.errorMessage) {
-        return <div>{location.latitude}</div>;
+        return <div><HemisDisplay latitude={location.latitude}/></div>;
       } 
       else if (!location.latitude && location.errorMessage) {
         return <div>{location.errorMessage}</div>;
