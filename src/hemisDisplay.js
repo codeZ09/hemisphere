@@ -1,10 +1,23 @@
 import React from 'react';
+import northernPic from './image/northernPic.jpeg';
+import southernPic from './image/southernPic.jpeg';
 
-const HemisDisplay = ({latitude}) => {
-    console.log(latitude)
+const hemisDisplay = ({latitude}) => {
+
+    const hemisphere = latitude > 0 ? 'Northern hemisphere' : 'Southern hemisphere';
+    const picture = latitude > 0 ? northernPic : southernPic;
+
     return (
-        <div>You are in the Anime Hemisphere....</div>
+        <div>
+            <div className="image">
+            <img src={picture} alt= "" />
+            </div>
+        <div className="text">
+        {hemisphere}
+        </div>
+        </div>
     )
+
 }
 
-export default HemisDisplay;
+export default hemisDisplay;
