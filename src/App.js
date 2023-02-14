@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react";
 import HemisDisplay from "./hemisDisplay";
-
+import './hemisphere.css';
 function App() {
  
   const [location, setlocation] = useState({ latitude: 25, errorMessage: " " });

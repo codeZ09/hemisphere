@@ -4,17 +4,19 @@ import southernPic from './image/southernPic.jpeg';
 
 const hemisDisplay = ({latitude}) => {
 
-    const hemisphere = latitude > 0 ? 'Northern hemisphere' : 'Southern hemisphere';
+    const hemisphere = latitude > 0 ? 'It is the northern hemisphere' : 'It is the southern hemisphere';
     const picture = latitude > 0 ? northernPic : southernPic;
 
     return (
-        <div>
+        <div className='general'>
+            <div className="container">
             <div className="image">
-            <img src={picture} alt= "" />
+            <img src={picture} alt= "" width={400}/>
             </div>
-        <div className="text">
-        {hemisphere}
-        </div>
+            </div>
+            <div className="text">
+             {hemisphere}
+               </div>
         </div>
     )
 

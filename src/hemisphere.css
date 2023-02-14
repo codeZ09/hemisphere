@@ -1,7 +1,28 @@
-.image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.general{
+    background: linear-gradient(to right, yellow , red);
+    height: 97vh;
 }
 
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.image{
+    width: 400px;
+    height: 250px;
+    margin-top: 200px;
+    padding-bottom:2px;
+    
+}
+
+.text{
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    background-color: green;
+    color: white;
+}
